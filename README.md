@@ -1,7 +1,6 @@
 # Hi, this is a example of how to provide a GraphqL endpoint using nodejs + MySQL.
 
-![enter image description here](https://graphql.org/img/logo.svg)
-First of all what is GraphQL?
+<img src="https://graphql.org/img/logo.svg" alt="drawing" width="200"/>
 
 From the official website:
 

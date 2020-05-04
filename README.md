@@ -35,7 +35,7 @@ Let's jump  to it
 4. `DB_NAME DB_HOST
 DB_USER
 DB_PASS`
-5. run `knex migrate:latest `
+5. run `knex migrate:latest --knexfile ./src/knexfile.js`
 6. run project with `node server.js`
 7. open the browser in `[http://localhost:4000/api]`(http://localhost:4000/api)
 

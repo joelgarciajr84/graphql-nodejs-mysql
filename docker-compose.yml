@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  db:
+    container_name: db_local
+    image: mysql:5.7
+    volumes:
+      - ./db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=development
+    networks:
+      - development
+    ports:
+      - 3306:3306
+  graph-node-mysql:
+    container_name: graph_node_mysql
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    networks:
+      - development
+    labels:
+      NAME: "graphql_node_mysql"
+    # volumes:
+    #   - ./src:/usr/src/app/
+    depends_on: 
+      - db
+networks:
+ development:

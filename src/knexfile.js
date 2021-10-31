@@ -3,7 +3,7 @@ module.exports = {
   development: {
     client: 'mysql',
     connection: {
-      database: process.env.DB_NAME,
+      database: this.development,
       user: process.env.DB_USER,
       password: process.env.DB_PASS,
     },

@@ -13,20 +13,21 @@ services:
       - development
     ports:
       - 3306:3306
-  # graph-node-mysql:
-  #   container_name: graph_node_mysql
-  #   build:
-  #     context: ./
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "4000:4000"
-  #   networks:
-  #     - development
-  #   labels:
-  #     NAME: "graphql_node_mysql"
-  #   # volumes:
-  #   #   - ./src:/usr/src/app/
-  #   depends_on: 
-  #     - db
+  graph-node-mysql:
+    container_name: graph_node_mysql
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    
+    ports:
+      - "4000:4000"
+    networks:
+      - development
+    labels:
+      NAME: "graphql_node_mysql"
+    volumes:
+      - ./src:/app/src/
+    depends_on: 
+      - db
 networks:
  development:

@@ -1,10 +1,11 @@
 version: "3.9"
 services:
-  db:
+  db_local:
     container_name: db_local
     image: mysql:5.7
     volumes:
       - ./db_data:/var/lib/mysql
+    command: --wait-timeout=28800
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=password
@@ -13,12 +14,13 @@ services:
       - development
     ports:
       - 3306:3306
+    expose:
+      - "3306"
   graph-node-mysql:
     container_name: graph_node_mysql
     build:
       context: ./
       dockerfile: Dockerfile
-    
     ports:
       - "4000:4000"
     networks:
@@ -27,7 +29,8 @@ services:
       NAME: "graphql_node_mysql"
     volumes:
       - ./src:/app/src/
-    depends_on: 
-      - db
+    depends_on:
+      - db_local
 networks:
- development:
+  development:
+

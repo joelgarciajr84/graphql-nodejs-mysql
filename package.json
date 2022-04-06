@@ -4,18 +4,19 @@
   "description": "GraphQL nodeJS API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.6.0",
-    "express": "^4.17.1",
-    "express-graphql": "^0.9.0",
-    "graphql": "^15.0.0",
-    "graphql-tools": "^5.0.0",
-    "knex": "^0.21.21",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.3.0",
+    "graphql-tools": "^8.2.4",
+    "knex": "^1.0.5",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.14"
   }
